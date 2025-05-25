@@ -1,9 +1,11 @@
 import React from "react";
 import rightArrow from "../assets/ic_hero_section_right_arrow.svg"
+import { useNavigate } from "react-router-dom";
 
 function MainButton() {
+    const navigate=useNavigate()
     const handleEnrollNow=()=>{
-        console.log("clicked enroll now")
+        navigate("/Pricing")
     }
     return (
         <>

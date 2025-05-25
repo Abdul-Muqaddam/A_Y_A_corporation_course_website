@@ -7,6 +7,7 @@ import Register from './components/Register'
 import Login from './components/login'
 import ForgetPassword from './components/forgetPassword'
 import AllCourses from './components/allCourses'
+import Pricing from './components/pricing'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path='/Login' element={<Login/>}/>
       <Route path='/forgetPassword' element={<ForgetPassword/>}/>
       <Route path='/allCourses' element={<AllCourses/>}/>
+      <Route path='/Pricing' element={<Pricing/>}/>
     </Routes>
     </>
   )

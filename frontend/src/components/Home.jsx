@@ -6,26 +6,26 @@ import Benefits from './benefits'
 import Course from './course'
 import CallToAction from './callToAction'
 import Footer from './footer'
- 
-function Home(){
-    const [token,setToken]=useState("")
-    useEffect(()=>{
 
-        setToken(        window.localStorage.getItem("token"))
-    },[])
+function Home() {
+    const [token, setToken] = useState("")
+    useEffect(() => {
+
+        setToken(window.localStorage.getItem("token"))
+    }, [])
 
 
-    return(
+    return (
         <>
-            <Header/>
-            <Hero/>
-            <Benefits/>
-            <Course/>
+            <Header />
+            <Hero />
+            <Benefits />
+            <Course />
             {
-                !token?
-                <CallToAction/>:<div></div>
+                !token ?
+                    <CallToAction /> : <div></div>
             }
-            <Footer/>
+            <Footer />
         </>
     )
 }
