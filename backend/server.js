@@ -11,7 +11,11 @@ const port = 3000;
 
 
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://a-y-a-corporation-course-website-udqh.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
+}));
 
 app.use(express.json())
 
