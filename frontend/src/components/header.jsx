@@ -48,6 +48,14 @@ function Header(props) {
         navigate("/Register",{replace:true})
     }
 
+    const handleAllCourseNavigation=()=>{
+        navigate("/allCourses")
+    }
+
+    const handleHomeNavigation=()=>{
+        navigate("/")
+    }
+
     return (
         <>
             <header className='flex justify-center h-[75px] items-center  '>
@@ -56,10 +64,13 @@ function Header(props) {
                         A-Y-A Corporation
                     </div>
                     <ul className='flex gap-[15px] items-center'>
+                        <li onClick={handleHomeNavigation} className="cursor-pointer hover:text-[#460FB0]">
+                            Home
+                        </li>
                         <li className="cursor-pointer hover:text-[#460FB0]">
                             Dashboard
                         </li>
-                        <li className="cursor-pointer hover:text-[#460FB0]">
+                        <li onClick={handleAllCourseNavigation} className="cursor-pointer hover:text-[#460FB0]">
                             All Courses
                         </li>
                         <li className="cursor-pointer hover:text-[#460FB0]">
@@ -67,9 +78,6 @@ function Header(props) {
                         </li>
                         <li className="cursor-pointer hover:text-[#460FB0]">
                             Contact
-                        </li>
-                        <li className="cursor-pointer hover:text-[#460FB0]">
-                            Affiliate
                         </li>
                     </ul>
                     <div className="flex gap-[10px] items-center">
