@@ -92,6 +92,9 @@ mongoose.connect("mongodb+srv://chandansar444999:admin@cluster0.mt6taz0.mongodb.
         });
 
 
+        app.get("/",(req,res)=>{
+            res.send("this is working")
+        })
 
         app.listen(port, () => {
             console.log(`Server is running on http://localhost:${port}`);
