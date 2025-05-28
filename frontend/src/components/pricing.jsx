@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import tutorPic from "../assets/pic_pricing.png"
+import Header from "./header";
+import Footer from "./footer";
 function Pricing() {
     return (
         <>
+        <Header/>
             <div class="min-h-screen bg-[#4906BF] flex flex-col items-center justify-center px-4 py-10">
                 {/* <!-- Title --> */}
                 <h1 class="text-white text-4xl font-bold mb-2">PRICING</h1>
@@ -17,7 +20,7 @@ function Pricing() {
 
                             <div class="text-left">
                                 <h2 class="text-2xl font-bold text-[#4906BF]">Front-End Development</h2>
-                                <p class="text-4xl font-extrabold text-[#4906BF] mt-2">$9</p>
+                                <p class="text-4xl font-extrabold text-[#4906BF] mt-2">$9.00</p>
                                 <p class="text-gray-600">one-time payment</p>
                             </div>
 
@@ -46,7 +49,7 @@ function Pricing() {
                     <p class="text-sm text-gray-500 mt-4">7-day money-back guarantee</p>
                 </div>
             </div>
-
+            <Footer/>
         </>
     )
 }
