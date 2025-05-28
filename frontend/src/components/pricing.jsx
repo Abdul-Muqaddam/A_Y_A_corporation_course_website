@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import tutorPic from "../assets/pic_pricing.png"
 function Pricing() {
     return (
