@@ -7,7 +7,7 @@ function Pricing() {
     return (
         <>
         <Header/>
-            <div class="min-h-screen bg-[#4906BF] flex flex-col items-center justify-center px-4 py-10">
+            <div class="min-h-screen bg-gradient-to-r from-[#220359] to-[#4906BF] flex flex-col items-center justify-center px-4 py-10">
                 {/* <!-- Title --> */}
                 <h1 class="text-white text-4xl font-bold mb-2">PRICING</h1>
                 <p class="text-white text-lg mb-10">Choose the plan that’s right for you</p>

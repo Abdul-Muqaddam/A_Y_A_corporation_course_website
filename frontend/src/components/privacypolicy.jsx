@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
         </p>
         <div className="space-y-6 text-gray-700 text-base leading-relaxed">
           <p>
-            This Privacy Policy explains how Aya Corporation collects, uses, discloses, and safeguards your information when you visit our website and use our services.
+            This Privacy Policy explains how <strong>Aya Corporation</strong> ("we", "our", or "us") collects, uses, discloses, and safeguards your information when you visit our website and use our services.
           </p>
 
           <div>
@@ -27,6 +27,9 @@ const PrivacyPolicy = () => {
               <li>Course progress and learning activity</li>
               <li>Device/browser info (collected through cookies and analytics)</li>
             </ul>
+            <p className="mt-2">
+              All payment transactions are securely processed through our third-party partner, Paddle.com. We do not directly store your credit/debit card information.
+            </p>
           </div>
 
           <div>
@@ -64,7 +67,10 @@ const PrivacyPolicy = () => {
           <div>
             <h2 className="text-lg font-semibold mb-1">6. Your Rights</h2>
             <p>
-              You may request access to or deletion of your personal information at any time. Contact us at [your email address] for data-related requests or questions.
+              You may request access to or deletion of your personal information at any time. Contact us at:{" "}
+              <a href="mailto:abdul.muqaddam.se@gmail.com" className="text-blue-600 underline">
+                abdul.muqaddam.se@gmail.com
+              </a>
             </p>
           </div>
 
@@ -85,9 +91,11 @@ const PrivacyPolicy = () => {
           <div>
             <h2 className="text-lg font-semibold mb-1">9. Contact</h2>
             <p>
-              For questions, concerns, or requests regarding this privacy policy, please contact us at:           <a href="mailto:abdul.muqaddam.se@gmail.com" className="text-blue-600 underline">
-            abdul.muqaddam.se@gmail.com
-          </a>{" "}
+              For questions, concerns, or data requests, please contact us at: <br />
+              <a href="mailto:abdul.muqaddam.se@gmail.com" className="text-blue-600 underline">
+                abdul.muqaddam.se@gmail.com
+              </a><br />
+              Aya Corporation, [Inside Bohar Gate, Multan, Pakistan]
             </p>
           </div>
         </div>

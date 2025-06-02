@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function MainButton() {
     const navigate=useNavigate()
     const handleEnrollNow=()=>{
-        navigate("/Pricing")
+        navigate("/CourseDetails")
     }
     return (
         <>

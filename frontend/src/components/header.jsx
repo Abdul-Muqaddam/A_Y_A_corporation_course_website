@@ -57,6 +57,13 @@ function Header(props) {
         navigate("/")
     }
 
+    const handleContactUs = ()=>{
+        navigate("/ContactUs")
+    }
+
+    const handleAboutUs =() =>{
+        navigate("/AboutUs")
+    }
     return (
         <>
             <header className='bg-white shadow-md'>
@@ -71,7 +78,9 @@ function Header(props) {
 
                         <li onClick={handleAllCourseNavigation} className="cursor-pointer hover:text-[#460FB0]">All Courses</li>
                         
-                        <li className="cursor-pointer hover:text-[#460FB0]">Contact</li>
+                        <li className="cursor-pointer hover:text-[#460FB0]" onClick={handleAboutUs}>About Us</li>
+                        <li className="cursor-pointer hover:text-[#460FB0]" onClick={handleContactUs}>Contact Us</li>
+
                     </ul>
 
                     {/* Right Side */}

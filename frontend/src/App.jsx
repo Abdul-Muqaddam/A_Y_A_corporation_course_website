@@ -11,6 +11,9 @@ import Pricing from './components/pricing'
 import TermsAndCondition from './components/termsandcondition'
 import PrivacyPolicy from './components/privacypolicy'
 import RefundPolicy from './components/refundpolicy'
+import ContactUs from './components/contactUs'
+import AboutUs from './components/AboutUs'
+import CourseDetails from './components/courseDetails'
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
       <Route path='/TermsAndCondition' element={<TermsAndCondition/>}/>
       <Route path='/PrivacyPolicy' element={<PrivacyPolicy/>}/>
       <Route path='/RefundPolicy' element={<RefundPolicy/>}/>
+      <Route path='/ContactUs' element={<ContactUs/>}/>
+      <Route path='/AboutUs' element={<AboutUs/>}/>
+      <Route path='/CourseDetails' element={<CourseDetails/>}/>
     </Routes>
     </>
   )
