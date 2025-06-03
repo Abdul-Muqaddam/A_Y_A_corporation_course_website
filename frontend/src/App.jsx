@@ -14,11 +14,14 @@ import RefundPolicy from './components/refundpolicy'
 import ContactUs from './components/contactUs'
 import AboutUs from './components/AboutUs'
 import CourseDetails from './components/courseDetails'
+import {ToCloseProvider} from "../src/context/toClosecontext"
 
 function App() {
   return (
     <>
+      <ToCloseProvider>
     <Routes>
+
       <Route path='/' element={<Home/>}/>   
       <Route path='/Register' element={<Register/>}/>   
       <Route path='/Login' element={<Login/>}/>
@@ -32,6 +35,7 @@ function App() {
       <Route path='/AboutUs' element={<AboutUs/>}/>
       <Route path='/CourseDetails' element={<CourseDetails/>}/>
     </Routes>
+      </ToCloseProvider>
     </>
   )
 }

@@ -1,28 +1,47 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CheckCircle, Clock, Star, MessageSquare, PlayCircle, Users } from "lucide-react";
 import Header from "./header";
 import Footer from "./footer";
 import { Link } from "react-router-dom";
 import dropdown from "../assets/ic_drop_down_arrow.svg"
 import icMonitorPlay from "../assets/ic_monitor_play.svg"
+import icMonitorPlayBlue from "../assets/ic_monitor_play_blue.svg"
 import icMobile from "../assets/ic_mobile.svg"
 import icInfinity from "../assets/ic_infinity.svg"
 import icTrophy from "../assets/ic_trophy.svg"
 import instructorImage from "../assets/instructor_img.jpg"
 import { useMediaQuery } from "react-responsive";
-
+import FreeLessonPreview from "./FreeLessonPreview";
+import {ToCloseContext} from "../context/toClosecontext"
 const CourseDetails = () => {
   const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
   const [isScrollFixedSection, setisScrollFixedSection] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const {isfreelessonPreview, setIsfreelessonPreview}=useContext(ToCloseContext)
+  // const [isfreelessonPreview, setIsfreelessonPreview] = useState(false);
+  const [freeLessonPreviewLink, setfreeLessonPreviewLink] = useState("");
 
-  const is1080px=useMediaQuery({
-    query:`(max-width:1080px)`
+
+  const is1080px = useMediaQuery({
+    query: `(max-width:1080px)`
   })
-  const is1024px=useMediaQuery({
-    query:`(max-width:1024px)`
+  const is1024px = useMediaQuery({
+    query: `(max-width:1024px)`
   })
 
+
+  const [isfreelessonPreviewtitle, setIsfreelessonPreviewtitle] = useState("");
+  const handlePreview = (preview, title, index) => {
+    if(preview==true){
+
+      setIsfreelessonPreview(true)
+      setIsfreelessonPreviewtitle(title)
+      index == 0 ? setfreeLessonPreviewLink("https://www.youtube.com/embed/72MUUqDabLE?si=lbJWhoYhaGm2J7yL") : index == 1 ? setfreeLessonPreviewLink("https://www.youtube.com/embed/7vmqTnCLXoA?si=ExcFWb2twOS3JeEp") : ""
+    }else{
+
+    }
+
+  }
   useEffect(() => {
     const handleChange = () => {
       if (window.scrollY > 450) {
@@ -57,11 +76,205 @@ const CourseDetails = () => {
 
   const Requirements = ["A Laptop or A computer", "internet connection", "Dedication"];
 
+
+  const lessonSection = [[
+    {
+      img: icMonitorPlayBlue,
+      label: "Getting Started: Install VS Code and Set Up Tailwind CSS",
+      preview: true,
+      time: 15.57
+    },
+    {
+      img: icMonitorPlayBlue,
+      label: "Building a Responsive Navbar for the Project",
+      preview: true,
+      time: 39.11
+    },
+    {
+      img: icMonitorPlay,
+      label: "Quiz of Lecture 2",
+      preview: false,
+      questions: 5
+    },
+    {
+      img: icMonitorPlay,
+      label: "Creating a Hero Section for A-ROOM",
+      preview: false,
+      time: 51.59
+    },
+    {
+      img: icMonitorPlay,
+      label: "Creating a Hero Section for A-ROOM (Continued)",
+      preview: false,
+      time: 16.43
+    },
+    {
+      img: icMonitorPlay,
+      label: "Quiz of Lecture 3",
+      preview: false,
+      questions: 5
+    },
+    {
+      img: icMonitorPlay,
+      label: "Creating the Cards section",
+      preview: false,
+      time: 40.35
+    },
+    {
+      img: icMonitorPlay,
+      label: "Adding hover effect on our cards",
+      preview: false,
+      time: 41.45
+    },
+    {
+      img: icMonitorPlay,
+      label: "Quiz of Lecture 5 & 6",
+      preview: false,
+      questions: 5
+    },
+    {
+      img: icMonitorPlay,
+      label: "Creating 4th section of A-ROOM",
+      preview: false,
+      time: 20.54
+    },
+    {
+      img: icMonitorPlay,
+      label: "4th section continued (A-ROOM)",
+      preview: false,
+      time: 25.55
+    },
+    {
+      img: icMonitorPlay,
+      label: "4th section continued (A-ROOM)",
+      preview: false,
+      time: 10.55
+    },
+    {
+      img: icMonitorPlay,
+      label: "Quiz of Lecture 7 & 8",
+      preview: false,
+      questions: 5
+    },
+    {
+      img: icMonitorPlay,
+      label: "4th section continued & 5th section of A-ROOM",
+      preview: false,
+      time: 48.58
+    },
+    {
+      img: icMonitorPlay,
+      label: "5th section & 6th section of A-ROOM",
+      preview: false,
+      time: 26.33
+    },
+    {
+      img: icMonitorPlay,
+      label: "6th section continued of A-ROOM",
+      preview: false,
+      time: 23.26
+    },
+    {
+      img: icMonitorPlay,
+      label: "6th section continued of A-ROOM",
+      preview: false,
+      time: 20.36
+    },
+    {
+      img: icMonitorPlay,
+      label: "Quiz of Lecture 10 & 11 & 12 & 13",
+      preview: false,
+      questions: 5
+    },
+    {
+      img: icMonitorPlay,
+      label: "6th section continued of A-ROOM",
+      preview: false,
+      time: 39.36
+    },
+    {
+      img: icMonitorPlay,
+      label: "Creating 7th section of A-ROOM (Footer)",
+      preview: false,
+      time: 38.09
+    },
+    {
+      img: icMonitorPlay,
+      label: "Quiz of Lecture 14 15 16",
+      preview: false,
+      questions: 5
+    },
+    {
+      img: icMonitorPlay,
+      label: "Creating our A-ROOM project responsive",
+      preview: false,
+      time: 65.36
+    },
+    {
+      img: icMonitorPlay,
+      label: "Creating our A-ROOM project responsive (continued)",
+      preview: false,
+      time: 44.06
+    },
+    {
+      img: icMonitorPlay,
+      label: "Creating our A-ROOM project responsive (continued)",
+      preview: false,
+      time: 34.04
+    },
+    {
+      img: icMonitorPlay,
+      label: "Creating our A-ROOM project responsive (continued)",
+      preview: false,
+      time: 20.57
+    },
+    {
+      img: icMonitorPlay,
+      label: "Creating our A-ROOM project responsive (continued)",
+      preview: false,
+      time: 45.25
+    }
+  ], [
+    {
+      label: "Getting Started: Install VS Code and Set Up Tailwind CSS",
+      preview: false,
+      time: 15.57
+    },
+    { label: "Building a Responsive Navbar for the Project", preview: false, time: 39.11 },
+    { label: "Quiz of Lecture 2", preview: false, questions: 5 },
+    { label: "Creating a Hero Section for A-ROOM", preview: false, time: 51.59 },
+    { label: "Creating a Hero Section for A-ROOM (Continued)", preview: false, time: 16.43 },
+    { label: "Quiz of Lecture 3", preview: false, questions: 5 },
+    { label: "Creating the Cards section", preview: false, time: 40.35 },
+    { label: "Adding hover effect on our cards", preview: false, time: 41.45 },
+    { label: "Quiz of Lecture 5 & 6", preview: false, questions: 5 },
+    { label: "Creating 4th section of A-ROOM", preview: false, time: 20.54 },
+    { label: "4th section continued (A-ROOM)", preview: false, time: 25.55 },
+    { label: "4th section continued (A-ROOM)", preview: false, time: 10.55 },
+    { label: "Quiz of Lecture 7 & 8", preview: false, questions: 5 },
+    { label: "4th section continued & 5th section of A-ROOM", preview: false, time: 48.58 },
+    { label: "5th section & 6th section of A-ROOM", preview: false, time: 26.33 },
+    { label: "6th section continued of A-ROOM", preview: false, time: 23.26 },
+    { label: "6th section continued of A-ROOM", preview: false, time: 20.36 },
+    { label: "Quiz of Lecture 10 & 11 & 12 & 13", preview: false, questions: 5 },
+    { label: "6th section continued of A-ROOM", preview: false, time: 39.36 },
+    { label: "Creating 7th section of A-ROOM (Footer)", preview: false, time: 38.09 },
+    { label: "Quiz of Lecture 14 15 16", preview: false, questions: 5 },
+    { label: "Creating our A-ROOM project responsive", preview: false, time: 65.36 },
+    { label: "Creating our A-ROOM project responsive (continued)", preview: false, time: 44.06 },
+    { label: "Creating our A-ROOM project responsive (continued)", preview: false, time: 34.04 },
+    { label: "Creating our A-ROOM project responsive (continued)", preview: false, time: 20.57 },
+    { title: "Creating our A-ROOM project responsive (continued)", preview: false, time: 45.25 }
+  ]];
+
+
   return (
     <>
-
       <Header />
-    
+
+      {
+        isfreelessonPreview ? <FreeLessonPreview title={isfreelessonPreviewtitle} videoLink={freeLessonPreviewLink} /> : ""
+      }
       <div className="bg-gradient-to-r from-[#220359] to-[#4906BF] text-white py-12 px-6 md:px-10">
         {/* Hero Section */}
         <div className="flex flex-col lg:flex-row justify-between">
@@ -131,7 +344,7 @@ const CourseDetails = () => {
             <div key={index}>
               <div
                 onClick={() => setOpenDropdownIndex(openDropdownIndex === index ? null : index)}
-                className={`cursor-pointer border-[2px] border-[#4C3F76] mt-10 bg-[#3A1A73] px-6 py-4 flex items-center justify-between rounded-[5px] w-full max-w-[100%]  ${is1024px?"md:max-w-[100vw]":"md:max-w-[60vw]"}`}
+                className={`cursor-pointer border-[2px] border-[#4C3F76] mt-10 bg-[#3A1A73] px-6 py-4 flex items-center justify-between rounded-[5px] w-full max-w-[100%]  ${is1024px ? "md:max-w-[100vw]" : "md:max-w-[60vw]"}`}
               >
                 <div className="flex items-center gap-3">
                   <img
@@ -144,9 +357,32 @@ const CourseDetails = () => {
                 <div>{course.lectures}</div>
               </div>
               {openDropdownIndex === index && (
-                <div className="border-[2px] border-[#4C3F76] border-t-transparent bg-[#3A1A73] w-full max-w-[100%] md:max-w-[60vw] p-4">
-                  {/* Course details here */}
+                <div className={`border-[2px] border-[#4C3F76] border-t-transparent bg-[#3A1A73] w-full max-w-[100%] ${is1024px ? "md:max-w-[100vw]" : "md:max-w-[60vw]"}   p-4`}>
+                  {
+                    lessonSection[index].map((item, idx) => (
+                      <div onClick={() => handlePreview(item.preview, item.label, idx)} key={idx} className="flex flex-col sm:flex-row justify-between gap-2 sm:gap-4 mt-3 w-full">
+                        {/* Left Side */}
+                        <div className="flex gap-3 items-start sm:items-center w-full sm:w-auto">
+                          <img src={item.img} alt="" className="h-[20px] mt-1 sm:mt-0" />
+                          <div className={`text-sm sm:text-base break-words ${item.preview ? "text-[#3DBEFF] underline cursor-pointer" : ""}`}>
+                            {item.label}
+                          </div>
+                        </div>
+
+                        {/* Right Side */}
+                        <div className="flex gap-3 justify-between sm:justify-end w-full sm:w-auto text-sm sm:text-base">
+                          <div className={`${item.preview ? "text-[#3DBEFF] underline cursor-pointer" : ""}`}>
+                            {item.preview ? "Preview" : ""}
+                          </div>
+                          <div className={`${item.preview ? "text-[#3DBEFF] underline cursor-pointer" : ""}`}>
+                            {item.time ? item.time : `${item.questions} Question`}
+                          </div>
+                        </div>
+                      </div>
+                    ))
+                  }
                 </div>
+
               )}
             </div>
           ))}
@@ -158,7 +394,7 @@ const CourseDetails = () => {
             ))}
           </ul>
 
-          <div className={`text-white w-full ${is1024px?"md:w-full":"md:w-[65%]"}  my-10 space-y-6`}>
+          <div className={`text-white w-full ${is1024px ? "md:w-full" : "md:w-[65%]"}  my-10 space-y-6`}>
             <div className="bg-[#3A1A73] p-6 rounded-[10px] transition-all duration-500">
               <h2 className="text-2xl font-bold">Description</h2>
               <p>
@@ -184,7 +420,7 @@ const CourseDetails = () => {
           </div>
 
           {/* Instructor */}
-          <section className={`bg-[#3A1A73] text-white w-full  ${is1024px?"":"md:w-[65%]"}  py-16 px-4 md:px-20`}>
+          <section className={`bg-[#3A1A73] text-white w-full  ${is1024px ? "" : "md:w-[65%]"}  py-16 px-4 md:px-20`}>
             <h2 className="text-3xl font-bold mb-8">Instructor</h2>
             <div className="flex flex-col md:flex-row gap-6 md:items-start">
               <div className="w-[120px] h-[120px] rounded-full overflow-hidden shadow-lg border-2 border-[#7D3CFF]">
